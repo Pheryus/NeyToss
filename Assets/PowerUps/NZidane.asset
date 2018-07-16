@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b014f152addcaf48af6101247ab1ba6, type: 3}
+  m_Name: NZidane
+  m_EditorClassIdentifier: 
+  name: Zadene
+  start_cost: 300
+  bonus_force: {x: 0, y: 0}
+  min_bonus_force: {x: 0, y: 0}
+  unlock_highscore: 100
+  scalling: 300
+  scalling_percentage: 0
+  cost_exponential_percentage: 1
+  reduce_percentage: 0
+  max_level: 10
+  has_max_level: 1
+  sprite: {fileID: 21300000, guid: aed64f2197d9ba64abbfd1c510fabd7f, type: 3}

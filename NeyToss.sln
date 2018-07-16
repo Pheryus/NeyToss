@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeyToss", "Assembly-CSharp.csproj", "{8F67C609-E233-EF39-AA2E-F3B5299C04AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeyToss", "Assembly-CSharp-Editor.csproj", "{C36E89CB-9037-D719-4C9A-36BA3DA7479A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F67C609-E233-EF39-AA2E-F3B5299C04AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F67C609-E233-EF39-AA2E-F3B5299C04AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F67C609-E233-EF39-AA2E-F3B5299C04AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F67C609-E233-EF39-AA2E-F3B5299C04AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C36E89CB-9037-D719-4C9A-36BA3DA7479A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C36E89CB-9037-D719-4C9A-36BA3DA7479A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C36E89CB-9037-D719-4C9A-36BA3DA7479A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C36E89CB-9037-D719-4C9A-36BA3DA7479A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
