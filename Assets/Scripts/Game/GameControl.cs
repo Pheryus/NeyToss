@@ -68,7 +68,7 @@ public class GameControl : MonoBehaviour {
 
 	public Floor floor;
 
-	public bool reborn = true;
+	bool reborn = true;
 
 	public GameObject new_score;
 
@@ -376,6 +376,7 @@ public class GameControl : MonoBehaviour {
 		can_collide_with_enemy = false;
 
 		if (!reborn){
+			Debug.Log("asd");
 			state = game_state.reborn;
 			neymarquezine.SetActive(true);
 			reduceVelocity();

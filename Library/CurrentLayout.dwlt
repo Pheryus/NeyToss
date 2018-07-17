@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -226,8 +226,8 @@ MonoBehaviour:
     y: 0
     width: 204
     height: 637
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -258,7 +258,7 @@ MonoBehaviour:
   - {fileID: 18}
   - {fileID: 13}
   m_Selected: 0
-  m_LastSelected: 0
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -657,21 +657,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 665bf6ff365cf6fff85cf6ff205ff6ff2c5ff6ffe478f6ffa27af6ff608cf6ff4ad4f6ff72e2f6ff944bf8ff90daf8ffd60ef9ff880ff9ff2c10f9ff8011f9ff9011f9ff4a3bf9ff3a43f9ff0a44f9ffcc44f9fff446f9ff0047f9ff6c49f9ff328bfaff348bfaff729afaff5ca9faff74affaffb02ffcffdec8fcffe0c8fcffaceefcffe0fbfcfff605fdffe407fdff9413fdff3e46feff3a50feffdc6efeff74a9feff68aafeff72aafeff7eaafeff90aafeff48b6feff9cc8feffe6d8feff4666ffff2468ffff429bffff449bffff28a9ffffe0aaffff06f0ffff18fbfffff4ffffff000000009034000078620000e83c0100b83d0100926101002663010040630100e4740100788201006e83010020ab0100a4ab0100b4ab0100
+    m_ExpandedIDs: ee44ffffcc45ffff9c46ffffc448ffffd048ffffe658ffffae63ffff446bffff8474ffff0e7affff18a9ffff46abffff2aadffff4ee4ffff18fbffff000000005e3200006832000068480000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: JesusBar
-      m_OriginalName: JesusBar
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -474230
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -718,34 +718,34 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/PowerUps
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/PowerUps
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Pedro\GitHub\NeyToss
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 80}
-    m_SelectedIDs: 8e2a0000
-    m_LastClickedID: 10894
-    m_ExpandedIDs: 000000005c2a00007a2a0000862a00007c2c0000922c0000ac2c0000da30000000ca9a3b
+    m_SelectedIDs: da2e0000
+    m_LastClickedID: 11994
+    m_ExpandedIDs: 000000005c2a00007e2a00008a2a0000882c00009e2c0000b82c00000231000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Prefabs
-      m_OriginalName: Prefabs
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 11926
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 
@@ -759,7 +759,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005c2a00007a2a0000862a00007c2c0000922c0000ac2c0000da300000
+    m_ExpandedIDs: 000000005c2a00007e2a00008a2a0000882c00009e2c0000b82c000002310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -828,7 +828,7 @@ MonoBehaviour:
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: Inspector
+    m_Text: Debug
     m_Image: {fileID: -6905738622615590433, guid: 0000000000000000d000000000000000,
       type: 0}
     m_Tooltip: 

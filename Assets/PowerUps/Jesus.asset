@@ -15,7 +15,7 @@ MonoBehaviour:
   start_cost: 5000
   bonus_force: {x: 600, y: 0}
   min_bonus_force: {x: 0, y: 0}
-  unlock_highscore: 1500
+  unlock_highscore: 2000
   scalling: 0
   scalling_percentage: 0
   cost_exponential_percentage: 0
