@@ -12,8 +12,14 @@ MonoBehaviour:
   m_Name: Players
   m_EditorClassIdentifier: 
   name: Jogadores do Gramado
-  start_cost: 0
-  bonus_force: {x: 0, y: 0}
-  unlock_highscore: 0
-  scalling: 0
+  start_cost: 1250
+  bonus_force: {x: 75, y: 75}
+  min_bonus_force: {x: 0, y: 0}
+  unlock_highscore: 1000
+  scalling: 125
+  scalling_percentage: 0
+  cost_exponential_percentage: 0.0526
+  reduce_percentage: 0
+  max_level: 0
+  has_max_level: 0
   sprite: {fileID: 21300004, guid: 4369c1ec979b2134c922f69236329799, type: 3}

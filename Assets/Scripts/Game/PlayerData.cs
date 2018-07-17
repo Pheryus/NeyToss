@@ -21,8 +21,6 @@ public class PlayerData : MonoBehaviour {
             checked_news[i] = true;
         }
 
-        powerups[0] = 10;
-        powerups[1] = 1;
         jesus = 0;
         money = 0;
         highscore = 0;

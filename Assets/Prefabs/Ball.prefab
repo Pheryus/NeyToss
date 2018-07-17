@@ -45,7 +45,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4491404289806414
 Transform:
   m_ObjectHideFlags: 1
@@ -53,8 +53,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1620261908976912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.347, y: -0.44, z: 85.3123}
-  m_LocalScale: {x: 1.545, y: 1.545, z: 1.545}
+  m_LocalPosition: {x: -13.009, y: -1.102, z: 85.3123}
+  m_LocalScale: {x: 0.7363702, y: 0.7363702, z: 0.7363702}
   m_Children:
   - {fileID: 4742843552855460}
   m_Father: {fileID: 0}
@@ -85,18 +85,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.041406214, y: 0.8971403}
+  m_Offset: {x: -0.028995037, y: 1.8855499}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.4, y: 2.48}
+    oldSize: {x: 6, y: 6}
     newSize: {x: 3, y: 1.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1239567, y: 0.6305114}
+  m_Size: {x: 4.9118605, y: 1.5260737}
   m_EdgeRadius: 0
 --- !u!61 &61592742550246458
 BoxCollider2D:
@@ -110,7 +110,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.027604103, y: -0.25534016}
+  m_Offset: {x: -0.04168272, y: -0.6918304}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -121,7 +121,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.3250074, y: 1.7591177}
+  m_Size: {x: 5.112913, y: 3.5895605}
   m_EdgeRadius: 0
 --- !u!114 &114170295951147000
 MonoBehaviour:
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d97c788e04f39154fa6acae7b4bc72f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impulse: {x: 100, y: 1000}
+  impulse: {x: 200, y: 500}
   movespeed: 0
   is_a_ball: 1
   min_speed: 0
@@ -185,7 +185,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bc1466a41e3817a41b49e68f7a2ed849, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4db0296d0e2ecd948a2037b334c4ff5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -17,8 +17,16 @@ public class ZidaneHead : MonoBehaviour {
     }
 
 	void defineBonusForce(){
-		int index = (int)DataManager.powerUp.fzidane;
-		bonus_force = DataManager.instance.powerups[index].bonus_force  * PlayerData.powerups[index];
+
+        if (zidaneReborn){
+            int index = (int)DataManager.powerUp.jesus;
+		    bonus_force = DataManager.instance.powerups[index].bonus_force * PlayerData.powerups[index];
+        }
+        else{
+            int index = (int)DataManager.powerUp.fzidane;
+		    bonus_force = DataManager.instance.powerups[index].bonus_force  * PlayerData.powerups[index];
+        }
+		
 	}
 
     private void OnTriggerEnter2D(Collider2D other) {

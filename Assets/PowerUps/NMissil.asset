@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Name: NMissil
   m_EditorClassIdentifier: 
   name: "M\xEDssil"
-  start_cost: 400
+  start_cost: 600
   bonus_force: {x: 0, y: 0}
   min_bonus_force: {x: 0, y: 0}
-  unlock_highscore: 200
-  scalling: 100
+  unlock_highscore: 250
+  scalling: 300
   scalling_percentage: 0
-  cost_exponential_percentage: 0
+  cost_exponential_percentage: 0.5
   reduce_percentage: 0
-  max_level: 0
-  has_max_level: 0
+  max_level: 10
+  has_max_level: 1
   sprite: {fileID: 21300000, guid: 45d11d64e6628e44ca3a653d3bcc000d, type: 3}

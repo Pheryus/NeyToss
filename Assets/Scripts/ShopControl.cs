@@ -91,6 +91,7 @@ public class ShopControl : MonoBehaviour {
 		else{
 			price.gameObject.SetActive(true);
 			t.GetChild(5).gameObject.SetActive(true);
+			t.GetChild(4).gameObject.SetActive(false);
 		}
 
 		if (!PlayerData.checked_news[i])

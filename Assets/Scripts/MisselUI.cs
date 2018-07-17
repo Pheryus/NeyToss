@@ -53,6 +53,9 @@ public class MisselUI : MonoBehaviour {
 			}
 		}
 		
+		if (aim_active)
+			tryFireMissel();
+		
 	}
 
 	private void FixedUpdate() {
@@ -78,7 +81,6 @@ public class MisselUI : MonoBehaviour {
 			#endif
 			aim.transform.position = v;
 
-			tryFireMissel();
 		}
 	}
 
@@ -117,6 +119,12 @@ public class MisselUI : MonoBehaviour {
 			return;
 		
 		aim_active = !aim_active;
+
+		if (aim_active)
+			img.color = Color.blue;
+		else
+			img.color = Color.red;
+
 		aim.SetActive(aim_active);
 	}
 

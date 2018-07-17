@@ -12,8 +12,15 @@ MonoBehaviour:
   m_Name: Jesus
   m_EditorClassIdentifier: 
   name: Jesus
-  start_cost: 0
-  bonus_force: {x: 0, y: 0}
-  unlock_highscore: 0
+  start_cost: 5000
+  bonus_force: {x: 600, y: 0}
+  min_bonus_force: {x: 0, y: 0}
+  unlock_highscore: 1500
   scalling: 0
+  scalling_percentage: 0
+  cost_exponential_percentage: 0
+  reduce_percentage: 0
+  max_level: 0
+  has_max_level: 0
+  fixed_cost: 1
   sprite: {fileID: 21300000, guid: 0e7b0b23c1081c743b0e735b0be9b3c9, type: 3}

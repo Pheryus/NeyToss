@@ -10,7 +10,6 @@ public class    PowerUp : ScriptableObject {
 
     public Vector2 bonus_force, min_bonus_force;
 
-
     public int unlock_highscore, scalling;
 
     public float scalling_percentage, cost_exponential_percentage, reduce_percentage;
@@ -19,15 +18,25 @@ public class    PowerUp : ScriptableObject {
 
     public bool has_max_level;
 
+    public bool fixed_cost;
+
     public Sprite sprite;
 
     public int getPrice(int i){
+
+        if (fixed_cost)
+            return start_cost;
+
         return start_cost + (int)((start_cost * cost_exponential_percentage) * PlayerData.powerups[i] * PlayerData.powerups[i]);
     }
 
     public int getHighscore(int i){
 
         if (has_max_level && i > max_level)
+            return 0;
+
+
+        if (i > 10)
             return 0;
 
         if (i == 0)

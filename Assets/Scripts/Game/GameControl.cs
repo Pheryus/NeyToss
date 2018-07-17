@@ -64,7 +64,7 @@ public class GameControl : MonoBehaviour {
 
 	public Transform canvas;
 
-	public GameObject zidane_reborn;
+	public GameObject jesus_reborn;
 
 	public Floor floor;
 
@@ -91,7 +91,7 @@ public class GameControl : MonoBehaviour {
 
 	public InGameShop game_shop;
 
-	int neymarquezine_clicked = 0;
+	float neymarquezine_clicked = 0;
 
 	public LayerMask ui_layer, action_layer;
 
@@ -101,9 +101,16 @@ public class GameControl : MonoBehaviour {
 
 	public bool debug;
 
+	public int times_reborned = 0;
+
 
 	[Range(0, 1)]
 	public float debug_value;
+
+
+	public Text jesus_percent;
+
+	public Image jesus_bar;
 
 
 	void Awake(){
@@ -111,6 +118,7 @@ public class GameControl : MonoBehaviour {
 	}
 
 	void Start(){
+		defineJesus();
 		defineCanarinho();
 		defineBonusForce();
 		started = false;
@@ -125,6 +133,12 @@ public class GameControl : MonoBehaviour {
 			highscore.transform.parent.gameObject.SetActive(true);
 		}
 		Invoke("canClick", 0.5f);
+	}
+
+	void defineJesus(){
+		if (PlayerData.powerups[(int)DataManager.powerUp.jesus] > 0){
+			reborn = false;
+		}
 	}
 
 	void defineCanarinho(){
@@ -248,18 +262,14 @@ public class GameControl : MonoBehaviour {
 	}
 	
 	void clickedToImpulseNeymar(){
-		neymarquezine_clicked++;
-		float max_y = -2;
-		if (head.position.y > max_y){
-			head.velocity = Vector2.zero;
-			head.position = new Vector2(head.position.x, max_y);
-		}
-		else{
-			head.AddForce(Vector2.up * impulse_force);
-		}
+		neymarquezine_clicked += PlayerData.powerups[(int)DataManager.powerUp.jesus] * 0.8f;
 	}
 
 	void impulseNeymar(){
+
+
+		#if UNITY_EDITOR
+
 		if (left_click){
 			if (Input.GetMouseButtonDown(0)){
 				left_click = false;
@@ -273,34 +283,65 @@ public class GameControl : MonoBehaviour {
 			}
 		}
 
+		#else
+
+		Vector3 origin = Vector3.zero;
+		foreach (Touch t in Input.touches){
+			if (t.phase == TouchPhase.Began){
+				origin = Camera.main.ScreenToWorldPoint(t.position);
+				RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.zero, Mathf.Infinity, action_layer);
+				clickedToImpulseNeymar();
+				break;
+			}
+		}
+
+		#endif
+
 		marquezine_timer += Time.deltaTime;
 
+		endTimeJesus();
+		updateJesusBar();
+		checkJesusSuccess();
+	}
+
+	void updateJesusBar(){
+
+		float need = (times_reborned+1) * 60;
+		float have = neymarquezine_clicked;
+		float percent = have/need;
+
+		int p = (int)(percent * 100);
+		jesus_percent.text = p.ToString() + "%";
+		jesus_bar.fillAmount = percent;
+	}
+
+	void checkJesusSuccess(){
+		if (neymarquezine_clicked > (times_reborned+1) * 60){
+			times_reborned++;
+			state = game_state.freeze_ney;
+			marquezine_timer = 0;
+			jesusReborn();
+			jesus_percent.text = "";
+			jesus_bar.fillAmount = 0;
+			neymarquezine_clicked = 0;
+		}
+	}
+
+	void endTimeJesus(){
 		if (marquezine_timer > 3.5f){
 			marquezine_timer = 0;
 			state = game_state.over;
+			reborn = true;
 			gameOver();
 			return;
 		}
-
-		if (neymarquezine_clicked > 20){
-			state = game_state.freeze_ney;
-			zidaneReborn();
-			neymarquezine_clicked = 0;
-		}
-		
 	}
 
-	void zidaneReborn(){
+
+	void jesusReborn(){
 		neymarquezine.SetActive(false);
-		GameObject go = Instantiate(zidane_reborn, canvas);
+		GameObject go = Instantiate(jesus_reborn, canvas);
 		Destroy(go, 2.5f);
-	}
-
-	public void freezeNey(bool b){
-		foreach (Transform t in player){
-			t.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-			t.GetComponent<Rigidbody2D>().isKinematic = b;
-		}
 	}
 
 	public void throwPlayerAgain(){
@@ -336,7 +377,6 @@ public class GameControl : MonoBehaviour {
 
 		if (!reborn){
 			state = game_state.reborn;
-			reborn = true;
 			neymarquezine.SetActive(true);
 			reduceVelocity();
 
@@ -377,7 +417,14 @@ public class GameControl : MonoBehaviour {
 	}
 
 	void updateDistanceText(){
-		score = (int) ((player_torso.position.x - started_x) / 3);
+
+		int last_score = (int) ((player_torso.position.x - started_x) / 3);
+
+		if (last_score < score)
+			return;
+		
+		score = last_score;
+
 
 		if (score >= last_meta + n_between_meta){
 			last_meta = score;

@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d97c788e04f39154fa6acae7b4bc72f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  impulse: {x: 100, y: 1000}
+  impulse: {x: 100, y: 600}
   movespeed: 15
   is_a_ball: 0
   min_speed: 15

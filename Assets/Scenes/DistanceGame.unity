@@ -263,7 +263,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: b1a34a529cc1ef243b8f698cd9ee0a8b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!233 &49684735
 HingeJoint2D:
@@ -410,6 +410,81 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 57045370}
+  m_CullTransparentMesh: 0
+--- !u!1 &73005428
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 73005429}
+  - component: {fileID: 73005431}
+  - component: {fileID: 73005430}
+  m_Layer: 0
+  m_Name: JesusBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &73005429
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 73005428}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.25, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1090648394}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.8, y: 8.4}
+  m_SizeDelta: {x: 350, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &73005430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 73005428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: e53facd334b685c4484e1ed2e7e5bbdc, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Jesus Bar
+--- !u!222 &73005431
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 73005428}
   m_CullTransparentMesh: 0
 --- !u!1 &118593774
 GameObject:
@@ -5785,8 +5860,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.5363742
     - serializedVersion: 3
-      time: 0.89620125
-      value: 0.7505024
+      time: 0.8589393
+      value: 0.8199604
       inSlope: 1.9157636
       outSlope: 1.9157636
       tangentMode: 0
@@ -5823,7 +5898,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  curve_speed: 4.8
+  curve_speed: 4.2
   death_timer: 0
   min_speed: 5
   carinha: {fileID: 346466418}
@@ -5831,10 +5906,10 @@ MonoBehaviour:
   game_over: {fileID: 1979378916}
   foot_particle: {fileID: 1478468149}
   canvas: {fileID: 724686929}
-  zidane_reborn: {fileID: 1975746579228016, guid: 1cb72fae129a74743acc27f6de8d84e0,
+  jesus_reborn: {fileID: 1975746579228016, guid: 1cb72fae129a74743acc27f6de8d84e0,
     type: 2}
   floor: {fileID: 1762081721}
-  reborn: 1
+  reborn: 0
   new_score: {fileID: 574971650}
   highscore: {fileID: 1622627547}
   new_highscore_text: {fileID: 1891333472}
@@ -5850,8 +5925,11 @@ MonoBehaviour:
     m_Bits: 1024
   can_collide_with_enemy: 1
   canarinho_bar: {fileID: 551076042}
-  debug: 1
+  debug: 0
+  times_reborned: 0
   debug_value: 0.7
+  jesus_percent: {fileID: 1350027800}
+  jesus_bar: {fileID: 311945807}
 --- !u!4 &267039363
 Transform:
   m_ObjectHideFlags: 0
@@ -6099,8 +6177,10 @@ MonoBehaviour:
   - tag: Ball
     prefab: {fileID: 1620261908976912, guid: 85c56b4d11adf4c49b82f29733f315f5, type: 2}
     size: 5
-  interval: 100
-  ball_interval: 175
+  interval: 175
+  ball_interval: 200
+  min_interval: 50
+  min_ball_interval: 100
   start_offset: 500
 --- !u!1 &268206950
 GameObject:
@@ -6244,7 +6324,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: b1a34a529cc1ef243b8f698cd9ee0a8b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &268953437
 BoxCollider2D:
@@ -6503,7 +6583,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: b1a34a529cc1ef243b8f698cd9ee0a8b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &301767852
 BoxCollider2D:
@@ -6705,6 +6785,75 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 93.98233, y: 92.278275}
   m_EdgeRadius: 0
+--- !u!1 &311945805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 311945806}
+  - component: {fileID: 311945808}
+  - component: {fileID: 311945807}
+  m_Layer: 0
+  m_Name: FillingBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &311945806
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 311945805}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1090648394}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 42.552, y: 8.326}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &311945807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 311945805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 318dacb33fb438b4e8c7dd462094dbde, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 0
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &311945808
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 311945805}
+  m_CullTransparentMesh: 0
 --- !u!1 &328176004
 GameObject:
   m_ObjectHideFlags: 0
@@ -7234,7 +7383,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: b1a34a529cc1ef243b8f698cd9ee0a8b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &458981562
 BoxCollider2D:
@@ -8822,7 +8971,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 950304471
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &869117567
 RectTransform:
@@ -9172,7 +9321,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: b1a34a529cc1ef243b8f698cd9ee0a8b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &1058123952
 BoxCollider2D:
@@ -9274,6 +9423,78 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1064090658}
   m_CullTransparentMesh: 0
+--- !u!1 &1090648393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1090648394}
+  - component: {fileID: 1090648396}
+  - component: {fileID: 1090648395}
+  m_Layer: 0
+  m_Name: Jesus Bar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1090648394
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1090648393}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.075, y: 0.075, z: 1}
+  m_Children:
+  - {fileID: 73005429}
+  - {fileID: 311945806}
+  - {fileID: 1350027799}
+  m_Father: {fileID: 1110455369}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.73, y: 2.89}
+  m_SizeDelta: {x: 42.552, y: 8.326}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1090648395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1090648393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 6e4973fb65ca923459955b2863fa9fc6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1090648396
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1090648393}
+  m_CullTransparentMesh: 0
 --- !u!1 &1104318936
 GameObject:
   m_ObjectHideFlags: 0
@@ -9371,6 +9592,7 @@ Transform:
   m_LocalScale: {x: 87.86982, y: 67.59217, z: 56.326805}
   m_Children:
   - {fileID: 1249030037}
+  - {fileID: 1090648394}
   m_Father: {fileID: 724686929}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9603,7 +9825,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: b1a34a529cc1ef243b8f698cd9ee0a8b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &1138781999
 BoxCollider2D:
@@ -9701,6 +9923,56 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1243449617732038, guid: 4a0d738d3b2861c458c8b27b906d9a7a, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61730111703918406, guid: 4a0d738d3b2861c458c8b27b906d9a7a,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61301581827703138, guid: 4a0d738d3b2861c458c8b27b906d9a7a,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61002256457920392, guid: 4a0d738d3b2861c458c8b27b906d9a7a,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61733810710294978, guid: 4a0d738d3b2861c458c8b27b906d9a7a,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61212453755262736, guid: 4a0d738d3b2861c458c8b27b906d9a7a,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61231183656604120, guid: 4a0d738d3b2861c458c8b27b906d9a7a,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61736935177156898, guid: 4a0d738d3b2861c458c8b27b906d9a7a,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61179560171673558, guid: 4a0d738d3b2861c458c8b27b906d9a7a,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61949834099723148, guid: 4a0d738d3b2861c458c8b27b906d9a7a,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61105496872463526, guid: 4a0d738d3b2861c458c8b27b906d9a7a,
+        type: 2}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -14645,7 +14917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1249030037
 Transform:
   m_ObjectHideFlags: 0
@@ -15295,6 +15567,81 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1306077553}
   m_CullTransparentMesh: 0
+--- !u!1 &1350027798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1350027799}
+  - component: {fileID: 1350027801}
+  - component: {fileID: 1350027800}
+  m_Layer: 0
+  m_Name: JesusPercent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1350027799
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1350027798}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.125, z: 1.0000004}
+  m_Children: []
+  m_Father: {fileID: 1090648394}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.00000086463, y: -0.44676}
+  m_SizeDelta: {x: 425.54, y: 73.756}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1350027800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1350027798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: e53facd334b685c4484e1ed2e7e5bbdc, type: 3}
+    m_FontSize: 70
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!222 &1350027801
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1350027798}
+  m_CullTransparentMesh: 0
 --- !u!1 &1351407207
 GameObject:
   m_ObjectHideFlags: 0
@@ -15902,7 +16249,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: b1a34a529cc1ef243b8f698cd9ee0a8b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &1571108159
 GameObject:
@@ -16470,7 +16817,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.054773014, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -16481,7 +16828,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 1}
+  m_Size: {x: 0.25954604, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &1762081723
 Rigidbody2D:
@@ -16499,9 +16846,9 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &1765051447
 GameObject:
@@ -16664,7 +17011,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: b1a34a529cc1ef243b8f698cd9ee0a8b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &1769573262
 MonoBehaviour:
@@ -16799,7 +17146,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: b1a34a529cc1ef243b8f698cd9ee0a8b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &1799243093
 BoxCollider2D:
@@ -17009,7 +17356,7 @@ GameObject:
   - component: {fileID: 1879144275}
   - component: {fileID: 1879144277}
   - component: {fileID: 1879144276}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: missil (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17401,7 +17748,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: b1a34a529cc1ef243b8f698cd9ee0a8b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &1943507891
 BoxCollider2D:
@@ -22586,7 +22933,7 @@ GameObject:
   - component: {fileID: 2097765166}
   - component: {fileID: 2097765168}
   - component: {fileID: 2097765167}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: missil (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

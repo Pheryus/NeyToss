@@ -16,6 +16,8 @@ public class EnemyControl : MonoBehaviour {
 
     public float interval, ball_interval;
 
+    public float min_interval, min_ball_interval;
+
     public float start_offset;
 
 
@@ -25,10 +27,26 @@ public class EnemyControl : MonoBehaviour {
 
     void Awake(){
         instance = this;
+        defineInterval();
         createObjectPool();
 
         x_enemy_variance = neymar.transform.position.x + start_offset;
         x_ball_variance = neymar.transform.position.x + start_offset;
+    }
+
+
+    void defineInterval(){
+        int player_id = (int)DataManager.powerUp.players;
+        int ball_id = (int)DataManager.powerUp.ball;
+
+        interval -= PlayerData.powerups[player_id] * 10;
+        ball_interval -= PlayerData.powerups[ball_id] * 10;
+
+        if (interval < min_interval)
+            interval = min_interval;
+
+        if (ball_interval < min_ball_interval)
+            ball_interval= min_ball_interval;
     }
 
     void createObjectPool(){

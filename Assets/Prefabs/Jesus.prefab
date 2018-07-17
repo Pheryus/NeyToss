@@ -23,8 +23,9 @@ GameObject:
   - component: {fileID: 61771878999853108}
   - component: {fileID: 95010140993937836}
   - component: {fileID: 114652404367903526}
+  - component: {fileID: 61410554041410100}
   m_Layer: 0
-  m_Name: Zidane2
+  m_Name: Jesus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,6 +44,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &61410554041410100
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1975746579228016}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.0319779, y: 1.0319779}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.36, y: 3.73}
+    newSize: {x: 8, y: 6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0443414, y: 1.2381506}
+  m_EdgeRadius: 0
 --- !u!61 &61771878999853108
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -55,18 +81,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.4163215, y: 0.7775562}
+  m_Offset: {x: -0.43255395, y: 0.14830208}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8, y: 6}
+    oldSize: {x: 3.36, y: 3.73}
     newSize: {x: 8, y: 6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.039604, y: 3.4196572}
+  m_Size: {x: 1.9779156, y: 3.0924444}
   m_EdgeRadius: 0
 --- !u!95 &95010140993937836
 Animator:
@@ -135,7 +161,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c7311c072adcc78469f7116c8a883ea7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c2ec51a6c668264c8f8fd3c73beb64c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

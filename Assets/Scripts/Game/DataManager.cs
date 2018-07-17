@@ -22,7 +22,6 @@ public class DataManager : MonoBehaviour {
         }
         data_path = Application.persistentDataPath + "/playerInfo.json";
         PlayerData.definePlayerData();
-        deleteSave();
         loadLocalData();
     }
 
