@@ -53,6 +53,11 @@ public class ShopControl : MonoBehaviour {
 	void buyUpgrade(Transform button, int i){
 		int cost = DataManager.instance.powerups[i].getPrice(i);
 		PlayerData.money -= cost;
+
+		if (i == (int)DataManager.powerUp.canarinho && PlayerData.powerups[i] == 0){
+			PlayerData.jesus = 75f;
+		}
+
 		PlayerData.powerups[i]++;
 		PlayerData.checked_news[i] = true;
 		DataManager.instance.saveLocalData();

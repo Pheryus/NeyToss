@@ -29,6 +29,8 @@ public class MisselUI : MonoBehaviour {
 
 	public LayerMask ui_layer;
 
+	bool touched, can_fire = false;
+
 	void Start() {
 		missel_nb = PlayerData.powerups[(int)DataManager.powerUp.missel];
 		instance = this;
@@ -53,21 +55,22 @@ public class MisselUI : MonoBehaviour {
 			}
 		}
 		
-		if (aim_active)
+		if (aim_active && can_fire)
 			tryFireMissel();
 		
 	}
 
 	private void FixedUpdate() {
-		if (aim_active){
+		if (aim_active && can_fire){
 
 			Vector2 v = Vector2.zero;
 
 			#if UNITY_EDITOR
 			v = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			touched = true;
 			#else
 
-			bool touched = false;
+			touched = false;
 
 			foreach (Touch t in Input.touches){
 				if (t.phase == TouchPhase.Moved || t.phase == TouchPhase.Stationary){
@@ -89,13 +92,15 @@ public class MisselUI : MonoBehaviour {
 	public void tryFireMissel(){
 
 		Vector2 position = Vector2.zero;
+		bool released = false;
+
 
 		#if UNITY_EDITOR
 		position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		if (Input.GetMouseButtonUp(0))
+			released = true;
 
 		#else
-
-		bool released = false;
 
 		foreach (Touch t in Input.touches){
 			if (t.phase == TouchPhase.Ended){
@@ -104,14 +109,18 @@ public class MisselUI : MonoBehaviour {
 			}
 		}
 
+		#endif
+
 		if (!released)
 			return;
-
-		#endif
 
 		RaycastHit2D rh = Physics2D.Raycast(position, Vector2.zero, Mathf.Infinity, ui_layer);
 		if (rh.collider == null)
 			shotMissel();
+	}
+
+	void enableFire(){
+		can_fire = true;
 	}
 
 	public void buttonClicked(){
@@ -120,6 +129,9 @@ public class MisselUI : MonoBehaviour {
 		
 		aim_active = !aim_active;
 
+		if (aim_active)
+			Invoke("enableFire", 0.1f);
+		
 		if (aim_active)
 			img.color = Color.blue;
 		else
@@ -135,6 +147,8 @@ public class MisselUI : MonoBehaviour {
 	public void shotMissel(){
 
 		if (missel_nb > 0 && !on_cooldown && gameObject.activeSelf){
+
+			can_fire = false;
 
 			Vector2 pos = new Vector2(GameControl.instance.player_torso.position.x - 18, 0);
 

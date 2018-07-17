@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Name: CanarinhoPower
   m_EditorClassIdentifier: 
   name: Canarinho
-  start_cost: 125
+  start_cost: 250
   bonus_force: {x: 10, y: 0}
   min_bonus_force: {x: 0, y: 0}
-  unlock_highscore: 150
-  scalling: 50
-  scalling_percentage: 25
-  cost_exponential_percentage: 0.35
+  unlock_highscore: 185
+  scalling: 150
+  scalling_percentage: 0
+  cost_exponential_percentage: 0.5
   reduce_percentage: 20
-  max_level: 10
+  max_level: 0
   has_max_level: 0
+  fixed_cost: 0
   sprite: {fileID: 21300000, guid: 813423659c41c68489d73af13ddc8029, type: 3}
