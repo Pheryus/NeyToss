@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 
-	BoxCollider2D bc;
+	public BoxCollider2D bc;
 
 	public bool collide = false;
 
@@ -12,9 +12,10 @@ public class Ball : MonoBehaviour {
 		bc = GetComponent<BoxCollider2D>();
 	}
 
-	private void OnCollisionEnter2D(Collision2D other) {
+	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag == "Player"){
-			//bc.isTrigger = true;
+			//bc.isTrigger = true
+			Debug.Log("tixa");
 			collide = true;
 		}
 	}

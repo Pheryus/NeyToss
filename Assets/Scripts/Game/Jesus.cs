@@ -42,7 +42,7 @@ public class Jesus : MonoBehaviour {
 				to_add = force.min_bonus_force.x;
 			}
 		}
-		this.force += new Vector2(bonus_force, 0);
+		this.force += new Vector2(bonus_force, 100);
 	}
 
 	void updateSlider(){
@@ -70,5 +70,6 @@ public class Jesus : MonoBehaviour {
 		maximum = false;
 		rb.AddForce(force);
 		PlayerData.jesus = 0;
+		FindObjectOfType<Body>().useCanarinho();
 	}
 }

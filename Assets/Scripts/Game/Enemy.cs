@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour {
 
             impulsePlayer(other.gameObject);
             collide = true;
+    
             Invoke("enableCollide", 0.5f);
         }
     }

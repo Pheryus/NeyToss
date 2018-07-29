@@ -20,7 +20,7 @@ MonoBehaviour:
   scalling_percentage: 0
   cost_exponential_percentage: 0.25
   reduce_percentage: 0
-  max_level: 0
-  has_max_level: 0
+  max_level: 10
+  has_max_level: 1
   fixed_cost: 0
   sprite: {fileID: 21300000, guid: bcf53b4c53292e341acf9fcb625c355e, type: 3}

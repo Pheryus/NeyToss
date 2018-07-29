@@ -16,10 +16,11 @@ MonoBehaviour:
   bonus_force: {x: 0, y: 0}
   min_bonus_force: {x: 0, y: 0}
   unlock_highscore: 100
-  scalling: 300
+  scalling: 350
   scalling_percentage: 0
   cost_exponential_percentage: 1
   reduce_percentage: 0
   max_level: 10
   has_max_level: 1
+  fixed_cost: 0
   sprite: {fileID: 21300000, guid: aed64f2197d9ba64abbfd1c510fabd7f, type: 3}

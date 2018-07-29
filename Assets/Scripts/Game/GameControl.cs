@@ -306,7 +306,7 @@ public class GameControl : MonoBehaviour {
 
 	void updateJesusBar(){
 
-		float need = (times_reborned+1) * 60;
+		float need = (times_reborned+1) * 45;
 		float have = neymarquezine_clicked;
 		float percent = have/need;
 
@@ -316,7 +316,7 @@ public class GameControl : MonoBehaviour {
 	}
 
 	void checkJesusSuccess(){
-		if (neymarquezine_clicked > (times_reborned+1) * 60){
+		if (neymarquezine_clicked > (times_reborned+1) * 45){
 			times_reborned++;
 			state = game_state.freeze_ney;
 			marquezine_timer = 0;
@@ -376,7 +376,6 @@ public class GameControl : MonoBehaviour {
 		can_collide_with_enemy = false;
 
 		if (!reborn){
-			Debug.Log("asd");
 			state = game_state.reborn;
 			neymarquezine.SetActive(true);
 			reduceVelocity();

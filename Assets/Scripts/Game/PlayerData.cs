@@ -20,7 +20,7 @@ public class PlayerData : MonoBehaviour {
             powerups[i] = 0;
             checked_news[i] = true;
         }
-
+        
         jesus = 0;
         money = 0;
         highscore = 0;

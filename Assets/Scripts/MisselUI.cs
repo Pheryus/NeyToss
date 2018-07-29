@@ -61,29 +61,33 @@ public class MisselUI : MonoBehaviour {
 	}
 
 	private void FixedUpdate() {
-		if (aim_active && can_fire){
+		
+		Vector2 v = Vector2.zero;
 
-			Vector2 v = Vector2.zero;
-
-			#if UNITY_EDITOR
-			v = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		#if UNITY_EDITOR
+		v = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		if (aim_active && can_fire)
 			touched = true;
-			#else
+		#else
 
-			touched = false;
+		touched = false;
 
-			foreach (Touch t in Input.touches){
-				if (t.phase == TouchPhase.Moved || t.phase == TouchPhase.Stationary){
+		foreach (Touch t in Input.touches){
+			if (t.phase == TouchPhase.Moved || t.phase == TouchPhase.Stationary){
+				if (aim_active && can_fire)
 					touched = true;
-					v = Camera.main.ScreenToWorldPoint(t.position);
-				}
+				v = Camera.main.ScreenToWorldPoint(t.position);
 			}
-
+		}
+		if (aim_active && can_fire)
 			aim.gameObject.SetActive(touched);
 
-			#endif
-			aim.transform.position = v;
+		#endif
+		aim.transform.position = v;
 
+		if (on_cooldown){
+			aim_active = false;
+			aim.SetActive(false);
 		}
 	}
 
@@ -125,6 +129,9 @@ public class MisselUI : MonoBehaviour {
 
 	public void buttonClicked(){
 		if (GameControl.instance.state != GameControl.game_state.game)
+			return;
+
+		if (on_cooldown)
 			return;
 		
 		aim_active = !aim_active;

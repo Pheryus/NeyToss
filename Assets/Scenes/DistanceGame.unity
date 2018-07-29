@@ -5909,7 +5909,6 @@ MonoBehaviour:
   jesus_reborn: {fileID: 1975746579228016, guid: 1cb72fae129a74743acc27f6de8d84e0,
     type: 2}
   floor: {fileID: 1762081721}
-  reborn: 1
   new_score: {fileID: 574971650}
   highscore: {fileID: 1622627547}
   new_highscore_text: {fileID: 1891333472}
@@ -17025,6 +17024,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   limit: 60
+  times_used: 0
+  reduce_percent: 0
+  max_speed: 200
 --- !u!1 &1782155219
 GameObject:
   m_ObjectHideFlags: 0

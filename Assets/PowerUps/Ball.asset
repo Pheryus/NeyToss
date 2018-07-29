@@ -11,15 +11,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b014f152addcaf48af6101247ab1ba6, type: 3}
   m_Name: Ball
   m_EditorClassIdentifier: 
-  name: "Bal\xE3o no Gramado"
+  name: "Bal\xF5es"
   start_cost: 1250
-  bonus_force: {x: 75, y: 75}
+  bonus_force: {x: 200, y: 75}
   min_bonus_force: {x: 0, y: 0}
-  unlock_highscore: 1000
+  unlock_highscore: 1500
   scalling: 125
   scalling_percentage: 0
   cost_exponential_percentage: 0.04
   reduce_percentage: 0
   max_level: 0
-  has_max_level: 0
+  has_max_level: 1
+  fixed_cost: 0
   sprite: {fileID: 21300000, guid: eb478ce2d5626db4cbda32099254e9dd, type: 3}

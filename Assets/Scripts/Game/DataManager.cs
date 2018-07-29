@@ -20,6 +20,8 @@ public class DataManager : MonoBehaviour {
             Destroy(gameObject);
             return;
         }
+        Application.targetFrameRate = 30;
+        QualitySettings.vSyncCount = 2;
         data_path = Application.persistentDataPath + "/playerInfo.json";
         PlayerData.definePlayerData();
         loadLocalData();

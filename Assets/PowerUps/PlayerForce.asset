@@ -21,5 +21,6 @@ MonoBehaviour:
   cost_exponential_percentage: 0.5
   reduce_percentage: 15
   max_level: 10
-  has_max_level: 1
+  has_max_level: 0
+  fixed_cost: 0
   sprite: {fileID: 21300000, guid: 2343902d21dc2224c9b6e6f46c517409, type: 3}
