@@ -82,6 +82,7 @@ MonoBehaviour:
   movespeed: 15
   is_a_ball: 0
   min_speed: 15
+  max_speed: 150
 --- !u!212 &212084258891431068
 SpriteRenderer:
   m_ObjectHideFlags: 1

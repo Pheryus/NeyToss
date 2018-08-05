@@ -7,7 +7,7 @@ public class MisselUI : MonoBehaviour {
 	
 	public static MisselUI instance;
 
-	public Image img, missel;
+	public Image img;
 	public Text text;
 
 	public float cooldown = 1;
@@ -31,6 +31,10 @@ public class MisselUI : MonoBehaviour {
 
 	bool touched, can_fire = false;
 
+	public Sprite unpressed_missile, pressed_missile;
+
+	public Image sprite;
+
 	void Start() {
 		missel_nb = PlayerData.powerups[(int)DataManager.powerUp.missel];
 		instance = this;
@@ -42,14 +46,14 @@ public class MisselUI : MonoBehaviour {
 
 		if (on_cooldown){
 			text.color = new Color(0,0,0,0.5f);
-			missel.color = transp;
+			sprite.color = transp;
 			timer += Time.deltaTime;
 
 			img.fillAmount = timer / cooldown;
 
 			if (timer > cooldown){
 				timer = 0;
-				missel.color = Color.white;
+				sprite.color = Color.white;
 				text.color = Color.black;
 				on_cooldown = false;
 			}
@@ -89,6 +93,11 @@ public class MisselUI : MonoBehaviour {
 			aim_active = false;
 			aim.SetActive(false);
 		}
+
+		if (aim_active)
+			img.sprite = pressed_missile;
+		else
+			img.sprite = unpressed_missile;
 	}
 
 
@@ -138,11 +147,6 @@ public class MisselUI : MonoBehaviour {
 
 		if (aim_active)
 			Invoke("enableFire", 0.1f);
-		
-		if (aim_active)
-			img.color = Color.blue;
-		else
-			img.color = Color.red;
 
 		aim.SetActive(aim_active);
 	}

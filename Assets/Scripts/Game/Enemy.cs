@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour {
 
     public bool is_a_ball;
 
-    public float min_speed; 
+    public float min_speed, max_speed; 
 
     Ball ball;
 
@@ -27,6 +27,9 @@ public class Enemy : MonoBehaviour {
                 return;
 
             if (Neymar.instance.getSpeed() < min_speed)
+                return;
+
+            if (Neymar.instance.getSpeed() > max_speed)
                 return;
 
             impulsePlayer(other.gameObject);

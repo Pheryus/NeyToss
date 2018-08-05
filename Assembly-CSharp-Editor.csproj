@@ -53,7 +53,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\GooglePlayGames\Editor\ForceNoGpgsForIOS.cs" />
+     <Compile Include="Assets\GooglePlayGames\Editor\GPGSAndroidSetupUI.cs" />
+     <Compile Include="Assets\GooglePlayGames\Editor\GPGSDocsUI.cs" />
+     <Compile Include="Assets\GooglePlayGames\Editor\GPGSPostBuild.cs" />
+     <Compile Include="Assets\GooglePlayGames\Editor\GPGSProjectSettings.cs" />
+     <Compile Include="Assets\GooglePlayGames\Editor\GPGSStrings.cs" />
+     <Compile Include="Assets\GooglePlayGames\Editor\GPGSUpgrader.cs" />
+     <Compile Include="Assets\GooglePlayGames\Editor\GPGSUtil.cs" />
+     <Compile Include="Assets\GooglePlayGames\Editor\NearbyConnectionUI.cs" />
      <Compile Include="Assets\Scripts\JSON\Editor\JSONChecker.cs" />
+     <None Include="Assets\GooglePlayGames\Editor\GooglePlayGamesPluginDependencies.xml" />
+     <None Include="Assets\GooglePlayGames\Editor\template-GameInfo.txt" />
+     <None Include="Assets\GooglePlayGames\Editor\template-AndroidManifest.txt" />
+     <None Include="Assets\GooglePlayGames\Editor\template-Constants.txt" />
+     <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.61.0.txt" />
+     <None Include="Assets\GooglePlayGames\Editor\m2repository\com\google\games\gpgs-plugin-support\maven-metadata.xml" />
+     <None Include="Assets\GooglePlayGames\Editor\GooglePlayGamesPlugin_v0.9.50.txt" />
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.0b7/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
  </Reference>
@@ -302,6 +318,18 @@
  </Reference>
  <Reference Include="UnityEditor.Facebook.Extensions">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.0b7/Editor/Data/PlaybackEngines/Facebook/UnityEditor.Facebook.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="Google.IOSResolver_v1.2.61.0">
+ <HintPath>C:/Pedro/GitHub/NeyToss/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.61.0.dll</HintPath>
+ </Reference>
+ <Reference Include="Google.JarResolver_v1.2.61.0">
+ <HintPath>C:/Pedro/GitHub/NeyToss/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.61.0.dll</HintPath>
+ </Reference>
+ <Reference Include="Google.VersionHandler">
+ <HintPath>C:/Pedro/GitHub/NeyToss/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
+ </Reference>
+ <Reference Include="Google.VersionHandlerImpl_v1.2.61.0">
+ <HintPath>C:/Pedro/GitHub/NeyToss/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.61.0.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.0b7/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/mscorlib.dll</HintPath>

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 
 public class ZidaneUI : MonoBehaviour {
-    public Image img, missel;
+    public Image img, zidane;
 	public Text text;
 
     public float cooldown;
@@ -16,6 +16,7 @@ public class ZidaneUI : MonoBehaviour {
 	public static ZidaneUI instance;
 
 	int zidane_nb;
+
 
 	public GameObject zidane_prefab;
 
@@ -32,14 +33,14 @@ public class ZidaneUI : MonoBehaviour {
 
 		if (on_cooldown){
 			text.color = new Color(0,0,0,0.5f);
-			missel.color = transp;
+			zidane.color = transp;
 			timer += Time.deltaTime;
 
 			img.fillAmount = timer / cooldown;
 
 			if (timer > cooldown){
 				timer = 0;
-				missel.color = Color.white;
+				zidane.color = Color.white;
 				text.color = Color.black;
 				on_cooldown = false;
 			}

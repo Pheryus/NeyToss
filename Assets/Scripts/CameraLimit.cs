@@ -65,8 +65,8 @@ public class CameraLimit : MonoBehaviour {
 
 		float velOffset = Mathf.Lerp( 0f, n1, Mathf.InverseLerp(0, n2, playerVel));
 
-		if (Mathf.Abs(playerVel) > 2f)
-			transform.position = new Vector3(position.x - x_offset + velOffset, position.y - y_offset, transform.position.z);
+		//if (Mathf.Abs(playerVel) > 0.5f)
+		transform.position = new Vector3(position.x - x_offset + velOffset, position.y - y_offset, transform.position.z);
 		
 		checkVerticalLimit();
 		shakeScreen();
@@ -97,6 +97,7 @@ public class CameraLimit : MonoBehaviour {
 		else if (transform.position.y < camera_start.y)
 			transform.position = new Vector3 (transform.position.x, camera_start.y, transform.position.z);
 
-		transform.position = new Vector3(Mathf.Max(transform.position.x, camera_start.x), transform.position.y, transform.position.z);
+		//transform.position = new Vector3(Mathf.Max(transform.position.x, camera_start.x), transform.position.y, transform.position.z);
+		//transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 	}
 }

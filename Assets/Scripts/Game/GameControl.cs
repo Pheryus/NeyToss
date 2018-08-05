@@ -74,8 +74,6 @@ public class GameControl : MonoBehaviour {
 
 	public Text highscore, new_highscore_text;
 
-	public Rigidbody2D head;
-
 	public GameObject neymarquezine;
 
 	float marquezine_timer = 0;
@@ -112,12 +110,15 @@ public class GameControl : MonoBehaviour {
 
 	public Image jesus_bar;
 
+	float last_y;
+
 
 	void Awake(){
 		instance = this;
 	}
 
 	void Start(){
+		last_y = player.transform.position.y;
 		defineJesus();
 		defineCanarinho();
 		defineBonusForce();
@@ -189,9 +190,8 @@ public class GameControl : MonoBehaviour {
 
 	void Update(){
 
-		if (Input.GetKeyDown(KeyCode.Escape)){
-			Application.Quit();
-		}
+		if (Time.deltaTime == 0)
+			return;
 
 		if (state == game_state.reborn && can_reborn){
 			impulseNeymar();
@@ -251,10 +251,12 @@ public class GameControl : MonoBehaviour {
 	void updateDeathTimer(){
 		death_timer += Time.deltaTime;
 
-		if (rb.velocity.magnitude > min_speed)
+		if (rb.velocity.magnitude > min_speed || (Mathf.Abs(last_y) - Mathf.Abs(player_torso.position.y) > 2f * Time.deltaTime))
 			death_timer = 0;
+
 		if (death_timer > 1)
 			gameOver();		
+		last_y = player_torso.position.y;
 	}
 
 	public void returnToMenu(){
@@ -266,7 +268,6 @@ public class GameControl : MonoBehaviour {
 	}
 
 	void impulseNeymar(){
-
 
 		#if UNITY_EDITOR
 
@@ -356,7 +357,7 @@ public class GameControl : MonoBehaviour {
 		foreach (Transform member in carinha)
 			member.GetComponent<Rigidbody2D>().isKinematic = false;
 
-		pe_carinha.AddForce(3000 * Vector2.right);
+		pe_carinha.AddForce(1000 * Vector2.right);
 	}
 
 
@@ -381,7 +382,7 @@ public class GameControl : MonoBehaviour {
 			reduceVelocity();
 
 			Invoke("enableReborn", 2f);
-		}
+		}	
 		else{
 			state = game_state.over;
 			neymarquezine.SetActive(false);
@@ -402,7 +403,7 @@ public class GameControl : MonoBehaviour {
 			else{
 				game_over.SetActive(true);
 			}
-			DataManager.instance.saveLocalData();
+			DataManager.saveData();
 			game_shop.enableShop();
 		}
 	}
@@ -459,9 +460,11 @@ public class GameControl : MonoBehaviour {
 		enableGravity();
 		Vector3 dir = Vector3.zero;
 
+		if (arrow_angle > 75)
+			arrow_angle = 75;
+
 		if (debug)
 			dir = Quaternion.AngleAxis(35, Vector3.forward) * Vector3.right;
-
 		else
 			dir = Quaternion.AngleAxis(arrow_angle + 5, Vector3.forward) * Vector3.right;
 

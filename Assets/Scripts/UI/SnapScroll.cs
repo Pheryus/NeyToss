@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SnapScroll : MonoBehaviour {
 
-	public GameObject pan_prefab;
+	public GameObject pan_prefab, pan_prefab2;
 
 	[Range(0,50)]
 	[Header("Controllers")]
@@ -59,7 +59,10 @@ public class SnapScroll : MonoBehaviour {
 		pan_selected_id = 0;
 
 		for (int i=0; i < pan_count; i++){
-			pan_instances[i] = Instantiate(pan_prefab, transform, false);
+			if (i == 0 || i == 7)
+				pan_instances[i] = Instantiate(pan_prefab, transform, false);
+			else
+				pan_instances[i] = Instantiate(pan_prefab2, transform, false);
 
 			if (i == 0){
 				pan_position[i] = -pan_instances[i].transform.localPosition;
@@ -135,7 +138,7 @@ public class SnapScroll : MonoBehaviour {
 		if (!PlayerData.checked_news[id]){
 			PlayerData.checked_news[id] = true;
 			pan_instances[id].GetComponent<PowerUpUI>().updateBalloon();
-			DataManager.instance.saveLocalData();
+			DataManager.saveData();
 		}
 	}
 

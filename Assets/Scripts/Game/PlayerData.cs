@@ -17,7 +17,7 @@ public class PlayerData : MonoBehaviour {
         powerups = new int[max_powerups];
         checked_news = new bool[max_powerups];
         for (int i = 0; i < max_powerups; i++){
-            powerups[i] = 0;
+            powerups[i] = 5;
             checked_news[i] = true;
         }
         

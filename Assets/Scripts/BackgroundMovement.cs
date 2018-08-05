@@ -57,7 +57,7 @@ public class BackgroundMovement : MonoBehaviour {
             left_index = 0;
     }
 
-    private void Update() {
+    private void FixedUpdate() {
 
         float delta_x = camera_transform.position.x - last_camera_x; 
         transform.position += Vector3.right * (delta_x * parallax_speed);
@@ -69,9 +69,7 @@ public class BackgroundMovement : MonoBehaviour {
 
         if (camera_transform.position.x > (layers[right_index].transform.position.x - view_zone)){
             scrollRight();
-        }
-
-        
+        }        
     }
 
 }

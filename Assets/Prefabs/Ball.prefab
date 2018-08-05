@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1620261908976912
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,6 +138,7 @@ MonoBehaviour:
   movespeed: 0
   is_a_ball: 1
   min_speed: 0
+  max_speed: 0
 --- !u!114 &114809615279827916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -149,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d2a31c3ea5741b46bdc553ae3760b30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bc: {fileID: 0}
   collide: 0
 --- !u!212 &212323168747691488
 SpriteRenderer:

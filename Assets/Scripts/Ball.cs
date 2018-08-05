@@ -14,8 +14,6 @@ public class Ball : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag == "Player"){
-			//bc.isTrigger = true
-			Debug.Log("tixa");
 			collide = true;
 		}
 	}
