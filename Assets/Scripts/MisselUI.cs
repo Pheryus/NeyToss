@@ -8,9 +8,8 @@ public class MisselUI : MonoBehaviour {
 	public static MisselUI instance;
 
 	public Image img;
-	public Text text;
 
-	public float cooldown = 1;
+	float cooldown = 18;
 
 	float timer = 0;
 
@@ -18,10 +17,7 @@ public class MisselUI : MonoBehaviour {
 
 	public GameObject missel_prefab;
 
-
 	public bool on_cooldown = false;
-
-	int missel_nb;
 
 	public bool aim_active;
 
@@ -36,16 +32,14 @@ public class MisselUI : MonoBehaviour {
 	public Image sprite;
 
 	void Start() {
-		missel_nb = PlayerData.powerups[(int)DataManager.powerUp.missel];
+		cooldown -= PlayerData.powerups[(int)DataManager.powerUp.missel] - 1;
 		instance = this;
 		gameObject.SetActive(false);
 	}
 
 	void Update(){
-		text.text = missel_nb.ToString();
 
 		if (on_cooldown){
-			text.color = new Color(0,0,0,0.5f);
 			sprite.color = transp;
 			timer += Time.deltaTime;
 
@@ -54,7 +48,6 @@ public class MisselUI : MonoBehaviour {
 			if (timer > cooldown){
 				timer = 0;
 				sprite.color = Color.white;
-				text.color = Color.black;
 				on_cooldown = false;
 			}
 		}
@@ -99,8 +92,6 @@ public class MisselUI : MonoBehaviour {
 		else
 			img.sprite = unpressed_missile;
 	}
-
-
 
 	public void tryFireMissel(){
 
@@ -152,12 +143,12 @@ public class MisselUI : MonoBehaviour {
 	}
 
 	public void checkIfItsActive(){
-		if (missel_nb > 0)
+		if (PlayerData.powerups[(int)DataManager.powerUp.missel] > 0)
 			MisselUI.instance.gameObject.SetActive(true);
 	}
 	public void shotMissel(){
 
-		if (missel_nb > 0 && !on_cooldown && gameObject.activeSelf){
+		if (!on_cooldown && gameObject.activeSelf){
 
 			can_fire = false;
 
@@ -169,10 +160,11 @@ public class MisselUI : MonoBehaviour {
 
 			go.GetComponent<Missel>().position = mouse_pos;
 			MisselUI.instance.on_cooldown = true;
-			missel_nb--;
 		}
 
+		/* 
 		if (missel_nb == 0)
 			gameObject.SetActive(false);
+		*/
 	}
 }

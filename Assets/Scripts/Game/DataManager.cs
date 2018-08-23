@@ -29,7 +29,7 @@ public class DataManager : MonoBehaviour {
             return;
         }
         Application.targetFrameRate = 30;
-        QualitySettings.vSyncCount = 2;
+        QualitySettings.vSyncCount = 1;
         data_path = Application.persistentDataPath + "/playerInfo.json";
         PlayerData.definePlayerData();
     }
@@ -38,7 +38,6 @@ public class DataManager : MonoBehaviour {
         connect();
     }
 
-
     public void connect() {
         PlayGamesClientConfiguration client_config = new PlayGamesClientConfiguration.Builder().EnableSavedGames().Build();
         PlayGamesPlatform.InitializeInstance(client_config);
@@ -46,8 +45,6 @@ public class DataManager : MonoBehaviour {
         PlayGamesPlatform.Activate();
         signIn();
     }
-
-
 
     public void signIn() {
         Social.localUser.Authenticate((bool success) => {

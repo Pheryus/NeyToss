@@ -59,10 +59,13 @@ public class SnapScroll : MonoBehaviour {
 		pan_selected_id = 0;
 
 		for (int i=0; i < pan_count; i++){
-			if (i == 0 || i == 7)
+			if (i == 0 || i == 4 || ((i >= 1 || i <= 3) && PlayerData.powerups[1 + (i-1) * 2] == 0)){
 				pan_instances[i] = Instantiate(pan_prefab, transform, false);
+			}
 			else
 				pan_instances[i] = Instantiate(pan_prefab2, transform, false);
+
+			pan_instances[i].transform.localScale = new Vector2(1,1);
 
 			if (i == 0){
 				pan_position[i] = -pan_instances[i].transform.localPosition;
@@ -78,6 +81,19 @@ public class SnapScroll : MonoBehaviour {
 			pan_position[i] = -pan_instances[i].transform.localPosition;
 		}
 
+	}
+
+	public void updatePanInstance (int i){
+
+		GameObject go = pan_instances[i];
+
+		pan_instances[i] = Instantiate(pan_prefab2, transform, false);
+
+		pan_instances[i].transform.position = go.transform.position;
+		pan_instances[i].transform.SetSiblingIndex(go.transform.GetSiblingIndex());
+		
+		go.transform.SetParent(null);
+		Destroy(go);
 	}
 
 	void FixedUpdate(){

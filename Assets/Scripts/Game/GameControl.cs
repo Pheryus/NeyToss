@@ -143,8 +143,10 @@ public class GameControl : MonoBehaviour {
 	}
 
 	void defineCanarinho(){
-		if (PlayerData.powerups[(int)DataManager.powerUp.canarinho] > 0)
+		if (PlayerData.powerups[(int)DataManager.powerUp.canarinho] > 0){
 			canarinho_bar.SetActive(true);
+			Debug.Log("ta ativo");
+		}
 	}
 
 	void defineBonusForce(){
@@ -432,7 +434,7 @@ public class GameControl : MonoBehaviour {
 			distance_text.GetComponent<Animator>().Play("DistanceText", -1, 0);
 		}
 
-		distance_text.text = "m: " + score;
+		distance_text.text = score + "m";
 	}	
 
 	void setForce(){

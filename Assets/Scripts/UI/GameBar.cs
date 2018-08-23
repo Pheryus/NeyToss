@@ -10,10 +10,13 @@ public class GameBar : MonoBehaviour {
 
 	public GameObject menu;
 
+	public GameObject button;
+
 	public void openWindow(){
 		Time.timeScale = 0;
 		menu.SetActive(true);
 		anim.Play("openWindow");
+		button.SetActive(false);
 	}
 
 	public void closeWindow(){
@@ -37,6 +40,7 @@ public class GameBar : MonoBehaviour {
 	}
 
 	void endCloseAnimation(){
+		button.SetActive(true);
 		Time.timeScale = 1;
 		menu.SetActive(false);
 	}

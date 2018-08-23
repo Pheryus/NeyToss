@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b014f152addcaf48af6101247ab1ba6, type: 3}
   m_Name: ForceZidane
   m_EditorClassIdentifier: 
-  name: "For\xE7a Zadene"
+  name: Zadene
   start_cost: 600
   bonus_force: {x: 200, y: 0}
   min_bonus_force: {x: 0, y: 0}

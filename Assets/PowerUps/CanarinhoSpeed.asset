@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b014f152addcaf48af6101247ab1ba6, type: 3}
   m_Name: CanarinhoSpeed
   m_EditorClassIdentifier: 
-  name: "For\xE7a do Canarinho"
+  name: Canarinho
   start_cost: 750
   bonus_force: {x: 550, y: 0}
   min_bonus_force: {x: 300, y: 0}

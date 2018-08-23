@@ -16,8 +16,6 @@ public class Body : MonoBehaviour {
 	[Range(0,1)]
 	public float reduce_percent;
 
-
-
 	public float max_speed;
 
 	private void Start() {
@@ -29,16 +27,15 @@ public class Body : MonoBehaviour {
 	public void useCanarinho(){
 		times_used++;
 		percent_speed *= 1 - reduce_percent;
-		Debug.Log("percent speed: " + percent_speed);
 	}
 
-	private void Update() {
+	private void FixedUpdate() {
 		if (PlayerData.powerups[(int)DataManager.powerUp.canarinho] == 0)
 			return;
 			
 		if (rb.velocity.magnitude > limit / 3){
 
-			float speed = rb.velocity.magnitude;
+			float speed = rb.velocity.magnitude / 2;
 
 			if (speed > 100)
 				speed = 100;
